@@ -1,7 +1,8 @@
+import os
 import pandas as pd
 from sklearn import tree
 
-df=pd.read_csv(r'C:\Users\Alfred\Documents\Python\wine.txt',dtype='float64',sep=',',names=list(range(14)))
+df=pd.read_csv(os.getcwd()+'\wine.txt',dtype='float64',sep=',',names=list(range(14)))
 n=0
 for i in range(10):
     dft=df.sample(int(df.shape[0]*0.7))
