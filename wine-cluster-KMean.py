@@ -1,3 +1,6 @@
+#feature reduction though PCA
+#and use K-Mean to cluster
+
 import os
 import numpy as np
 import pandas as pd
