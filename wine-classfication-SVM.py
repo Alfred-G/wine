@@ -28,6 +28,8 @@ alpha=0.1
 start=time.time()
 for n in range(1000):
     partial=1-dftl*dft.apply(lambda x:np.dot(theta,dftl*dft.apply(lambda y:np.dot(x,y),axis=1)),axis=1)
+    y=dftl/np.sqrt(int(df.shape[0]*0.7))
+    partial=partial-np.dot(np.dot(y,partial),y)
     theta=theta+partial
     w=np.dot(theta,pd.DataFrame.multiply(dft,dftl,axis=0))
 
